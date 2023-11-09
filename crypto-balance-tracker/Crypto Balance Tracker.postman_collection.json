@@ -1,0 +1,635 @@
+{
+	"info": {
+		"_postman_id": "e87b983c-dfbd-40d0-abc4-6d2e2c89aa9e",
+		"name": "Crypto Balance Tracker",
+		"description": "Requests for Crypto Balance Tracker App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12679277"
+	},
+	"item": [
+		{
+			"name": "Crypto Balance Tracker Login",
+			"item": [
+				{
+					"name": "LOGIN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"username\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/api/v1/login",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Crypto Balance Tracker",
+			"item": [
+				{
+					"name": "Platforms",
+					"item": [
+						{
+							"name": "COUNT PLATFORMS",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{env}}/api/v1/platforms/count",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"platforms",
+										"count"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET ALL PLATFORMS",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{env}}/api/v1/platforms",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"platforms"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET PLATFORM BY PLATFORMID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{env}}/api/v1/platforms/db13cdbc-f33e-4ca3-acd0-7357bb99e0e2",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"platforms",
+										"db13cdbc-f33e-4ca3-acd0-7357bb99e0e2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SAVE PLATFORM",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Binance\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{env}}/api/v1/platforms",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"platforms"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE PLATFORM",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Binance\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{env}}/api/v1/platforms/db13cdbc-f33e-4ca3-acd0-7357bb99e0e2",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"platforms",
+										"db13cdbc-f33e-4ca3-acd0-7357bb99e0e2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE PLATFORM",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{env}}/api/v1/platforms/db13cdbc-f33e-4ca3-acd0-7357bb99e0e2",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"platforms",
+										"db13cdbc-f33e-4ca3-acd0-7357bb99e0e2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User Cryptos",
+					"item": [
+						{
+							"name": "GET USER CRYPTOS BY PAGE",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{env}}/api/v1/cryptos?page=0",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"cryptos"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET USER CRYPTO BY USER CRYPTO ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{env}}/api/v1/cryptos/597ee816-416e-4b78-b9ce-ed16313a6e8a",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"cryptos",
+										"597ee816-416e-4b78-b9ce-ed16313a6e8a"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SAVE USER CRYPTO",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"cryptoName\": \"bitcoin\",\n  \"quantity\": 0.123456,\n  \"platformId\": \"db13cdbc-f33e-4ca3-acd0-7357bb99e0e2\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{env}}/api/v1/cryptos",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"cryptos"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "TRANSFER USER CRYPTO",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"userCryptoId\": \"597ee816-416e-4b78-b9ce-ed16313a6e8a\",\n  \"quantityToTransfer\": 0.10,\n  \"networkFee\": 0.00001,\n  \"sendFullQuantity\": false,\n  \"toPlatformId\": \"5991df81-66f9-4b5f-8067-dbf559caaae9\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{env}}/api/v1/cryptos/transfer",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"cryptos",
+										"transfer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE USER CRYPTO",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"cryptoName\": \"bitcoin\",\n  \"quantity\": 0.25,\n  \"platformId\": \"05b5071d-4897-44e8-9b6b-343ceabd4d05\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{env}}/api/v1/cryptos/db13cdbc-f33e-4ca3-acd0-7357bb99e0e2",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"cryptos",
+										"db13cdbc-f33e-4ca3-acd0-7357bb99e0e2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE USER CRYPTO",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{env}}/api/v1/cryptos/db13cdbc-f33e-4ca3-acd0-7357bb99e0e2",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"cryptos",
+										"db13cdbc-f33e-4ca3-acd0-7357bb99e0e2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Goals",
+					"item": [
+						{
+							"name": "GET GOALS BY PAGE",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{env}}/api/v1/goals?page=0",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"goals"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET GOAL BY GOALID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{env}}/api/v1/goals/bd0b9c6f-305e-45bb-9536-3fe9dd1a9a2f",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"goals",
+										"bd0b9c6f-305e-45bb-9536-3fe9dd1a9a2f"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SAVE GOAL",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"cryptoName\": \"bitcoin\",\n    \"goalQuantity\": 0.56789\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{env}}/api/v1/goals",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"goals"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE GOAL",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"cryptoName\": \"bitcoin\",\n    \"goalQuantity\": 1.1010\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{env}}/api/v1/goals/bd0b9c6f-305e-45bb-9536-3fe9dd1a9a2f",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"goals",
+										"bd0b9c6f-305e-45bb-9536-3fe9dd1a9a2f"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE GOAL",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{env}}/api/v1/goals/bd0b9c6f-305e-45bb-9536-3fe9dd1a9a2f",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"goals",
+										"bd0b9c6f-305e-45bb-9536-3fe9dd1a9a2f"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Insights",
+					"item": [
+						{
+							"name": "GET PLATFORM INSIGHTS",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{env}}/api/v1/insights/platforms/db13cdbc-f33e-4ca3-acd0-7357bb99e0e2",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"insights",
+										"platforms",
+										"db13cdbc-f33e-4ca3-acd0-7357bb99e0e2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET ALL PLATFORMS INSIGHTS",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{env}}/api/v1/insights/platforms/balances",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"insights",
+										"platforms",
+										"balances"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET USER CRYPTOS INSIGHTS BY PAGE",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{env}}/api/v1/insights/cryptos?page=0",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"insights",
+										"cryptos"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET USER CRYPTO INSIGHTS",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{env}}/api/v1/insights/cryptos/tether",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"insights",
+										"cryptos",
+										"tether"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET USER CRYPTOS PLATFORMS INSIGHTS BY PAGE",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{env}}/api/v1/insights/cryptos/platforms?page=0",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"insights",
+										"cryptos",
+										"platforms"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET USER CRYPTOS INSIGHTS",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{env}}/api/v1/insights/cryptos/balances",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"insights",
+										"cryptos",
+										"balances"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET TOTAL BALANCES",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{env}}/api/v1/insights/balances",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"insights",
+										"balances"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
