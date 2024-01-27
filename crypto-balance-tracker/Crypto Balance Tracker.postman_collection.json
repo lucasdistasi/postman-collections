@@ -518,7 +518,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{env}}/api/v1/insights/cryptos?page=0",
+									"raw": "{{env}}/api/v1/insights/cryptos?page=0&sortBy=MARKET_CAP_RANK&sortType=DESC",
 									"host": [
 										"{{env}}"
 									],
@@ -532,6 +532,14 @@
 										{
 											"key": "page",
 											"value": "0"
+										},
+										{
+											"key": "sortBy",
+											"value": "MARKET_CAP_RANK"
+										},
+										{
+											"key": "sortType",
+											"value": "DESC"
 										}
 									]
 								}
@@ -565,7 +573,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{env}}/api/v1/insights/cryptos/platforms?page=0",
+									"raw": "{{env}}/api/v1/insights/cryptos/platforms?page=0&sortBy=MARKET_CAP_RANK&sortType=ASC",
 									"host": [
 										"{{env}}"
 									],
@@ -580,6 +588,14 @@
 										{
 											"key": "page",
 											"value": "0"
+										},
+										{
+											"key": "sortBy",
+											"value": "MARKET_CAP_RANK"
+										},
+										{
+											"key": "sortType",
+											"value": "ASC"
 										}
 									]
 								}
